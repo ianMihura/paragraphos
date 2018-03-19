@@ -30,7 +30,7 @@ export class KeyBind {
             context.setFocus( Model.cursor.paragrapho );
         },
         "alt+arrowup": function(context: any) {
-            Move.moveup();
+            Move.moveup();            
             context.setFocus( Model.cursor.paragrapho );
         },
     };

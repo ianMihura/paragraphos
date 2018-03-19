@@ -3,7 +3,6 @@ import { Helpers } from "../back/helpers";
 
 export class Move {
     
-    //TODO send to another file ?
     static moveup(): void {
         Move._move(-1);
     }

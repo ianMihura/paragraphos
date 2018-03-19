@@ -35,7 +35,7 @@ export class EditorComponent {
 
     globalKeypress(event: any): void {
         Model.cursor.char = event.currentTarget.selectionStart;
-        KeyBind.keypress(event, this);
+        KeyBind.keypress(event, EditorComponent);
     }
 
     changeFile(index: number): void {
@@ -74,6 +74,7 @@ export class EditorComponent {
     //     });
     // }
 
+    // Dynamic height of textareas
     ngAfterViewChecked(): void {
         EditorComponent.adjustHeight();
     }
@@ -89,7 +90,7 @@ export class EditorComponent {
         }
     }
 
-    // This is maybe not usable
+    // For mantaining focus on paragrapho when rearanging paragraphos
     focus(index: number): void {
         Model.cursor.paragrapho = index;
     }
@@ -99,22 +100,4 @@ export class EditorComponent {
             document.getElementById("textarea_" + index).focus();
         });
     }
-    
-
-    // TODO fix this hack . maybe import some module for lifecycle management ?
-    // ngAfterViewChecked(): void {
-    //     EditorComponent.adjustHeight();
-    // }
-
-    // // This is called a hack
-    // static adjustHeight(): void{
-    //     let textareas = document.getElementsByTagName('textarea');
-
-    //     for (let i = 0; i < textareas.length; i++){
-    //         let input = textareas[Number(i)];
-
-    //         input.style.height = '0px';
-    //         input.style.height = input.scrollHeight + 'px';
-    //     }
-    // }
 }

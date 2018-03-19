@@ -25,6 +25,7 @@ import { EditorComponent } from "./editor/editor.component";
     EditorComponent
   ],
 
+  // TODO popups : dialogues
   // Dynamically added components
   entryComponents: [
 
