@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div (keyup)="globalKeypress($event)" style="text-align:center">
+
+    
+    <br />
+
+    <!-- <button mat-button (click)="changeFileName()">Change file name</button>
+    <button mat-button (click)="showDetails()">Details</button>
+
+    <br /> -->
+
+    <div style="display: inline;" *ngFor="let para of pr.para; let i = index">
+        <button mat-button (click)="changeFile(i)">{{para.name}}</button>
+    </div>
+
+    <div *ngFor="let paragrapho of pr.para[cursor.para].paragraphos; let i = index">
+        <textarea
+            contenteditable="true"
+            id="textarea_{{i}}"
+            name="textarea_{{i}}"
+            (focus)="focus(i)"
+            [(ngModel)]="paragrapho.text">
+            {{i}}
+
+        </textarea>
+    </div>
+</div>

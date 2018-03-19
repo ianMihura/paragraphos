@@ -1,18 +1,43 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
+// Import other Material modules
+import { MaterialModule } from './material.module';
 
-import { AppComponent } from './app.component';
+// Import Service
+import { RootService } from "./back/root.service";
+
+// Import all created components
+import { EditorComponent } from "./editor/editor.component";
 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  // Global Modules
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    MaterialModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  
+  // Created Components
+  declarations: [
+    EditorComponent
+  ],
+
+  // Dynamically added components
+  entryComponents: [
+
+  ],
+
+  // Services
+  providers: [
+    RootService
+  ],
+
+  // Entry Point
+  // TODO : might add a login or welcome screen
+  bootstrap: [ EditorComponent ]
 })
+
 export class AppModule { }
