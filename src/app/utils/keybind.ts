@@ -1,6 +1,7 @@
 import { Model } from "../back/model";
 import { Move } from "./move";
 export class KeyBind {
+//TODO make these choosable by settings
 
     static commands = {
         // command: fnAction

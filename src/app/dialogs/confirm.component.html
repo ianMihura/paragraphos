@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>{{data.title}}</h2>
+<mat-dialog-content>
+    <div *ngFor="let text of data.text">
+        <p>{{text}}</p>
+    </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <div *ngFor="let btn of data.btns; let i = index">
+        <button mat-button [mat-dialog-close]="btn.value">{{btn.text}}</button>
+    </div>
+</mat-dialog-actions>

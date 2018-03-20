@@ -7,6 +7,9 @@ import { Pr, Para, Paragrapho } from "../back/templates"
 import { Cursor } from "../utils/cursor"
 import { KeyBind } from '../utils/keybind'
 
+import { DialogPrompt } from "../dialogs/prompt.component";
+import { DialogConfirm } from "../dialogs/confirm.component";
+
 @Component({
     selector: 'editor',
     templateUrl: './editor.component.html',
@@ -42,37 +45,35 @@ export class EditorComponent {
         Model.cursor.para = index;
     }
 
-
-    //TODO : fix dialog situation
     //TODO : add dialogs for settings
-    // showDetails(): void {
-    //     this.dialog.open(DialogConfirm, {
-    //         data: {
-    //             title: "Details",
-    //             text: [
-    //                 "Project name: " + Model.pr.title,
-    //                 "Project author: " + Model.pr.author,
-    //                 "File name: " + Model.getCurrentPara().fileName
-    //             ],
-    //             btns: [
-    //                 {text: "Close", value: false}
-    //             ]
-    //         }
-    //     });
-    // }
+    showDetails(): void {
+        this.dialog.open(DialogConfirm, {
+            data: {
+                title: "Details",
+                text: [
+                    "Project name: " + Model.pr.title,
+                    "Project author: " + Model.pr.author,
+                    "File name: " + Model.getCurrentPara().name
+                ],
+                btns: [
+                    {text: "Close", value: false}
+                ]
+            }
+        });
+    }
 
-    // changeFileName(): void {
-    //     this.dialog.open(DialogPrompt, {
-    //         data: {
-    //             title: "Change File Name",
-    //             text: "",
-    //             value: Model.getCurrentPara().fileName
-    //         }
-    //     }).afterClosed().subscribe((result) => {
-    //         if (result)
-    //             Model.getCurrentPara().fileName = result;
-    //     });
-    // }
+    changeFileName(): void {
+        this.dialog.open(DialogPrompt, {
+            data: {
+                title: "Change File Name",
+                text: "",
+                value: Model.getCurrentPara().name
+            }
+        }).afterClosed().subscribe((result) => {
+            if (result)
+                Model.getCurrentPara().name = result;
+        });
+    }
 
     // Dynamic height of textareas
     ngAfterViewChecked(): void {

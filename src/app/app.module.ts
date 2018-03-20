@@ -11,6 +11,10 @@ import { RootService } from "./back/root.service";
 // Import all created components
 import { EditorComponent } from "./editor/editor.component";
 
+// Import all dialogs
+import { DialogConfirm } from "./dialogs/confirm.component";
+import { DialogPrompt } from "./dialogs/prompt.component";
+import { DialogSettings } from "./dialogs/settings.component";
 
 @NgModule({
   // Global Modules
@@ -22,13 +26,19 @@ import { EditorComponent } from "./editor/editor.component";
   
   // Created Components
   declarations: [
-    EditorComponent
+    EditorComponent,
+
+    DialogConfirm,
+    DialogPrompt,
+    DialogSettings
   ],
 
   // TODO popups : dialogues
   // Dynamically added components
   entryComponents: [
-
+    DialogConfirm,
+    DialogPrompt,
+    DialogSettings
   ],
 
   // Services
