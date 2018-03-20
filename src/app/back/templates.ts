@@ -37,8 +37,10 @@ export class Para {
 // Section / paragraph
 export class Paragrapho {
     text : string;
+    tags : string[];
 
     constructor(params: any) {
         this.text = params.text ? params.text : "";
+        this.tags = params.tags ? params.tags : [];
     }
 }

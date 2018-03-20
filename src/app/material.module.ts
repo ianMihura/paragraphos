@@ -5,7 +5,9 @@ import {
     MatToolbarModule,
     MatDialogModule,
     MatInputModule, 
-    MatMenuModule
+    MatMenuModule,
+    MatListModule,
+    MatIconModule
 } from '@angular/material';
 
 const Materials = [
@@ -14,8 +16,10 @@ const Materials = [
     MatButtonModule,
     MatToolbarModule,
     MatDialogModule,
+    MatInputModule,
     MatMenuModule,
-    MatInputModule
+    MatListModule,
+    MatIconModule
 ];
 
 // IMPORTANT : Don't forget to add the new imported module in both places !

@@ -13,15 +13,21 @@
         <button mat-button (click)="changeFile(i)">{{para.name}}</button>
     </div>
 
-    <div *ngFor="let paragrapho of pr.para[cursor.para].paragraphos; let i = index">
-        <textarea
-            contenteditable="true"
-            id="textarea_{{i}}"
-            name="textarea_{{i}}"
-            (focus)="focus(i)"
-            [(ngModel)]="paragrapho.text">
-            {{i}}
+    <mat-list>
+        <mat-list-item *ngFor="let paragrapho of pr.para[cursor.para].paragraphos; let i = index">
+            <textarea
+                contenteditable="true"
+                id="textarea_{{i}}"
+                name="textarea_{{i}}"
+                (focus)="focus(i)"
+                [(ngModel)]="paragrapho.text">
+                {{i}}
 
-        </textarea>
-    </div>
+            </textarea>
+            <button mat-icon-button (click)="showDetails()">
+                <mat-icon>info_outline</mat-icon>
+            </button>
+        </mat-list-item>
+    </mat-list>
+
 </div>

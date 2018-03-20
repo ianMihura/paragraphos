@@ -22,6 +22,19 @@ export class EditorComponent {
     cursor: Cursor;
     pr: Pr;
 
+    messages = [
+        {
+            from: "tuvieja",
+            subject: "asdf",
+            content: "asdffdaasdfdsa"
+        },
+        {
+            from: "tuvieja",
+            subject: "asdf",
+            content: "asdffdaasdfdsa"
+        }
+    ];
+
     constructor(private rootService: RootService
         , public dialog: MatDialog) { }    
 
@@ -41,11 +54,17 @@ export class EditorComponent {
         KeyBind.keypress(event, EditorComponent);
     }
 
+    // TODO take this to another file please
     changeFile(index: number): void {
         Model.cursor.para = index;
     }
 
     //TODO : add dialogs for settings
+
+    //TODO get these dialogs out of EditorComponent
+    
+    //TODO add more info about each paragrapho: tags
+    //TODO popup edit tags
     showDetails(): void {
         this.dialog.open(DialogConfirm, {
             data: {
@@ -75,6 +94,13 @@ export class EditorComponent {
         });
     }
 
+    static addTags(): void {
+        console.log(Model.getProjectTags())
+
+        //TODO dialog - outside EditorComponent
+    }
+
+    // TODO: correct for mat-list-items
     // Dynamic height of textareas
     ngAfterViewChecked(): void {
         EditorComponent.adjustHeight();

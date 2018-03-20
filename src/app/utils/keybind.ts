@@ -34,6 +34,10 @@ export class KeyBind {
             Move.moveup();            
             context.setFocus( Model.cursor.paragrapho );
         },
+
+        "alt+t": function(context: any) {
+            context.addTags();
+        }
     };
 
     /**

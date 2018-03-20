@@ -20,10 +20,11 @@ export class RootService {
                 return new Para({
                     id: para.id ? para.id : Helpers.generateId(),
                     author: para.author ? para.author : "",
-                    name: para.name ? para.fileName : "unknown name",
+                    name: para.name ? para.name : "unknown name",
                     paragraphos: para.paragraphos ? para.paragraphos.map((paragrapho) => {
                         return new Paragrapho({
-                            text: paragrapho.text
+                            text: paragrapho.text,
+                            tags: paragrapho.tags
                         })
                     }) : []
                 })
