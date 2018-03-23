@@ -12,6 +12,8 @@ export const PR = {
                 {"text": "1 file 2 Lorem ipsum dolor sit amet."},
                 {"text": "2 Lorem ipsum dolor sit amet."},
                 {"text": "3 Lorem ipsum dolor sit amet.",
+                    "title": "3 lorem",
+                    "author": "person 1",
                     "tags": ["tag1", "tag2", "tag3"],
                     "references": [
                         {
@@ -24,7 +26,8 @@ export const PR = {
                     ]
                 },
                 {"text": "4 Lorem ipsum dolor sit amet.",
-                    "title": "Title",
+                    "title": "4 lorem",
+                    "author": "person 2",
                     "tags": ["tag4", "tag3"],
                     "description": "Description or a longer title, subtitle",
                 }

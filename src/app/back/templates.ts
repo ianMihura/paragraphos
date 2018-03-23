@@ -36,10 +36,14 @@ export class Para {
 
 // Section / paragraph
 export class Paragrapho {
+    title : string;
+    author : string;    
     text : string;
     tags : string[];
-
+    
     constructor(params: any) {
+        this.title = params.title ? params.title : "";
+        this.author = params.author ? params.author : "";
         this.text = params.text ? params.text : "";
         this.tags = params.tags ? params.tags : [];
     }

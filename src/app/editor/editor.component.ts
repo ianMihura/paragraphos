@@ -63,8 +63,24 @@ export class EditorComponent {
 
     //TODO get these dialogs out of EditorComponent
     
-    //TODO add more info about each paragrapho: tags
-    //TODO popup edit tags
+    popupParagrapho(index: number): void {
+        this.focus(index);
+
+        this.dialog.open(DialogConfirm, {
+            data: {
+                title: "Information",
+                text: [
+                    "Title: " + Model.getCurrentParagrapho().title,
+                    "Author: " + Model.getCurrentParagrapho().author,
+                    "Tags: " + Model.getCurrentParagraphoTags().join(", ")
+                ],
+                btns: [
+                    {text: "Close", value: false}
+                ]
+            }
+        });
+    }
+    
     showDetails(): void {
         this.dialog.open(DialogConfirm, {
             data: {
@@ -95,7 +111,7 @@ export class EditorComponent {
     }
 
     static addTags(): void {
-        console.log(Model.getProjectTags())
+        console.log(Model.getProjectTags());
 
         //TODO dialog - outside EditorComponent
     }
@@ -125,6 +141,7 @@ export class EditorComponent {
     static setFocus(index: number): void {
         setTimeout( function() {
             document.getElementById("textarea_" + index).focus();
+            Model.cursor.paragrapho = index;
         });
     }
 }

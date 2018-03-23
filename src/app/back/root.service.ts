@@ -23,8 +23,10 @@ export class RootService {
                     name: para.name ? para.name : "unknown name",
                     paragraphos: para.paragraphos ? para.paragraphos.map((paragrapho) => {
                         return new Paragrapho({
-                            text: paragrapho.text,
-                            tags: paragrapho.tags
+                            title: paragrapho.title ? paragrapho.title : "",
+                            author: paragrapho.author ? paragrapho.author : "",
+                            text: paragrapho.text ? paragrapho.text : "",
+                            tags: paragrapho.tags ? paragrapho.tags : []
                         })
                     }) : []
                 })

@@ -5,7 +5,7 @@
     <br />
 
     <button mat-button (click)="changeFileName()">Change file name</button>
-    <button mat-button (click)="showDetails()">Details</button>
+    <button mat-button (click)="showDetails()">File Details</button>
 
     <br />
 
@@ -24,7 +24,7 @@
                 {{i}}
 
             </textarea>
-            <button mat-icon-button (click)="showDetails()">
+            <button mat-icon-button (click)="popupParagrapho(i)">
                 <mat-icon>info_outline</mat-icon>
             </button>
         </mat-list-item>
